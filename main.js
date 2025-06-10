@@ -3,16 +3,16 @@ const items = []
 function addItem() {
     const itemName = document.querySelector("#item").value
 
-const item = {
-    name: itemName,
-    checked: false
-}
+    const item = {
+        name: itemName,
+        checked: false
+    }
 
-items.push(item)
+    items.push(item)
 
-document.querySelector("#item").value = ""
+    document.querySelector("#item").value = ""
 
-showItemsList()
+    showItemsList()
 }
 
 function showItemsList() {
@@ -26,13 +26,13 @@ function showItemsList() {
                     <input type="checkbox" name="list" id="item-${index}">
 
                     <div class="custom-checkbox">
-                        <img src="./assets-20250609T034000Z-1-001/assets/checked.svg" alt="checked">
+                        <img src="./assets/checked.svg" alt="checked">
                     </div>
                     <label for="item-${index}">${item.name}</label>
                 </div>
 
                 <button onclick="removeItem('${item.name}')">
-                    <img src="./assets-20250609T034000Z-1-001/assets/trash-icon.svg" alt="trash icon">
+                    <img src="./assets/trash-icon.svg" alt="trash icon">
                 </button>
             </div>
         `
@@ -48,6 +48,7 @@ function removeItem(itemName) {
     setTimeout(() => {
         divWarning.classList.add("hide-warning")
     }, 4000)
+
     if (itemIndex !== -1 ) {
         items.splice(itemIndex, 1)
     }
